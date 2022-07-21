@@ -1,0 +1,342 @@
+<!-- Skip to content
+DEV Community
+Search...
+
+Log in
+Create account
+
+5
+
+3
+
+5
+
+Cover image for Create a form and fill form details in below table in Javascript
+Mahesh
+Mahesh
+Posted on Mar 17
+
+Create a form and fill form details in below table in Javascript
+#
+javascript
+#
+webdev
+#
+html
+#
+css
+javascript-projects (6 Part Series)
+1
+Project 1: color flipper project in Javascript explained
+2
+Project 2: Random Color Flipper in Javascript
+...
+2 more parts...
+5
+Project 5: Random number game in Javascript
+6
+Create a form and fill form details in below table in Javascript
+Seems simple task right?. Correct. Basic JS DOM interaction, HTML & CSS knowledge is enough to achieve this.
+
+This task can be an interview question for you. It's not that searching around different tutorials or stackoverflow or something else quickly. It's the step by step process we can build to achieve this.
+
+As we regularly follow, first divide the big item into chunks.
+
+Steps:
+
+create a sample form with several fields with submit button. I added 'name & email' fields.
+create a table column headers to show upfront. Which shows matching the labels of above form.
+Enter values and perform interaction upon clicking on submit button.
+Sample error message can be shown when user submits without values.
+Here is the code:
+
+Basically, it is self explanatory. -->
+<html>
+<script>
+    function publishToTable() {
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        // const error = document.getElementById('error');
+        // error.innerHTML = (!name || !email) ? 'Name & Email both values are required.' : '';
+        if (name && email) {
+            const tableElement = document.getElementById('table');
+            const trElement = document.createElement('tr');
+            const tbodyElement = document.createElement('tbody');
+            const nameEle = document.createElement('td');
+            const emailEle = document.createElement('td');
+            nameEle.innerHTML = name;
+            emailEle.innerHTML = email;
+            trElement.appendChild(nameEle);
+            trElement.appendChild(emailEle);
+            tbodyElement.appendChild(trElement);
+            tableElement.appendChild(tbodyElement);
+        }
+    }
+</script>
+
+<body>
+    <style>
+        div.complete {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10%;
+            overflow: auto;
+        }
+
+        div.form {
+            height: 200px;
+        }
+
+        label {
+            margin: 20px;
+            display: block;
+            font-size: 32px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
+        }
+
+        input {
+            padding: 10px;
+        }
+
+        span {
+            color: red;
+            position: fixed;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        button {
+            padding: 10px;
+            margin-top: 40px;
+            left: 50%;
+            position: fixed;
+            transform: translate(-50%, -50%);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
+        }
+
+        div#tables {
+            height: 300px;
+            overflow: auto;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid red;
+            border-collapse: collapse;
+            font-size: 32px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
+            padding: 10px;
+        }
+
+        th {
+            width: 20%;
+        }
+    </style>
+    <div class="complete">
+        <div class="form">
+            <label>Name: <input id="name" type="text"></label>
+            <label>Email: <input id="email" type="text"></label>
+            <span id="error"></span>
+            <button onclick="publishToTable()">Submit</button>
+        </div>
+        <div id="tables">
+            <table id="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</body>
+
+<!-- </html>
+I will explain what is happening under publishToTable().
+
+capture name and email values. (You can add more form fields if you require).
+Checking for non-empty values and showing error in case if at least one value is empty using span.
+Adding value to table only when both values are present. Hence checking both values and then forming td elements.
+Then, creating table elements using javascript and assigning 'name and email' to td.
+Thatz all. Here is the result.
+
+Image description
+
+Please let me know if you don't understand any piece.
+
+Thanks.
+
+💎 Love to see your response
+Like - You reached here means. I think, I deserve a like.
+Comment - We can learn together.
+Share - Makes others also find this resource useful.
+Subscribe / Follow - to stay up to date with my daily articles.
+Encourage me - You can buy me a Coffee
+Let's discuss further.
+Just DM @urstrulyvishwak
+Or mention
+@urstrulyvishwak
+
+For further updates:
+Follow @urstrulyvishwak
+
+javascript-projects (6 Part Series)
+1
+Project 1: color flipper project in Javascript explained
+2
+Project 2: Random Color Flipper in Javascript
+...
+2 more parts...
+5
+Project 5: Random number game in Javascript
+6
+Create a form and fill form details in below table in Javascript
+Discussion (0)
+Subscribe
+pic
+Add to the discussion
+Code of Conduct • Report abuse
+Read next
+theabhayprajapati profile image
+So tried bun! the new JS runtime.
+Abhay Prajapati - Jul 8
+
+shahednasser profile image
+Medusa v1.3.3: BatchJob API, Advanced Next.js Storefront, Feature Flags, and More!
+Shahed Nasser - Jul 7
+
+amirlotfi profile image
+How to create neon text using vanilla CSS
+Amir-Lotfi - Jun 28
+
+ahmedmohmd profile image
+Awesome Chrome Extensions for Every Developer
+Ahmed Mohamed - Jul 7
+
+
+Mahesh
+Follow
+⭐️ JS Content Creator ⭐️ | Angular Web developer
+JOINED
+Feb 12, 2022
+More from Mahesh
+What is callback in Javascript?
+#javascript #webdev #beginners #programming
+plusOne Array of Integers in Javascript
+#javascript #programming #challenge #webdev
+maxSubArraySum in Javascript
+#javascript #programming #challenge #webdev -->
+<html>
+<script>
+    function publishToTable() {
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        // const error = document.getElementById('error');
+        // error.innerHTML = (!name || !email) ? 'Name & Email both values are required.' : '';
+        if (name && email) {
+            const tableElement = document.getElementById('table');
+            const trElement = document.createElement('tr');
+            const tbodyElement = document.createElement('tbody');
+            const nameEle = document.createElement('td');
+            const emailEle = document.createElement('td');
+            nameEle.innerHTML = name;
+            emailEle.innerHTML = email;
+            trElement.appendChild(nameEle);
+            trElement.appendChild(emailEle);
+            tbodyElement.appendChild(trElement);
+            tableElement.appendChild(tbodyElement);
+        }
+    }
+</script>
+
+<body>
+    <style>
+        div.complete {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10%;
+            overflow: auto;
+        }
+
+        div.form {
+            height: 200px;
+        }
+
+        label {
+            margin: 20px;
+            display: block;
+            font-size: 32px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
+        }
+
+        input {
+            padding: 10px;
+        }
+
+        span {
+            color: red;
+            position: fixed;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        button {
+            padding: 10px;
+            margin-top: 40px;
+            left: 50%;
+            position: fixed;
+            transform: translate(-50%, -50%);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
+        }
+
+        div#tables {
+            height: 300px;
+            overflow: auto;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid red;
+            border-collapse: collapse;
+            font-size: 32px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
+            padding: 10px;
+        }
+
+        th {
+            width: 20%;
+        }
+    </style>
+    <div class="complete">
+        <div class="form">
+            <label>Name: <input id="name" type="text"></label>
+            <label>Email: <input id="email" type="text"></label>
+            <span id="error"></span>
+            <button onclick="publishToTable()">Submit</button>
+        </div>
+        <div id="tables">
+            <table id="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
+<!-- DEV Community — A constructive and inclusive social network for software developers. With you every step of your journey.
+
+Built on Forem — the open source software that powers DEV and other inclusive communities.
+
+Made with love and Ruby on Rails. DEV Community © 2016 - 2022. -->
